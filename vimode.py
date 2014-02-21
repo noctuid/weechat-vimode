@@ -252,7 +252,7 @@ vi_keys = {'j': "/window scroll_down",
            'cc': key_cc,
            'I': key_I,
            'yy': key_yy,
-           'p': "/input clipboard_paste",
+           'p': "/xclip",
            '0': "/input move_beginning_of_line",
            '/': "/input search_text"}
 # Vi operators. Each operator must have a corresponding function,
