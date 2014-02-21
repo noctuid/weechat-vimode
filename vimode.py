@@ -177,7 +177,7 @@ def operator_y(buf, input_line, pos1, pos2, overwrite=False):
     """Simulate the behavior of the 'y' operator."""
     start = min([pos1, pos2])
     end = max([pos1, pos2])
-    p = Popen(['xsel', '-pi'], stdin=PIPE)
+    p = Popen(['xsel', '-bi'], stdin=PIPE)
     p.communicate(input=input_line[start:end])
 
 def motion_w(input_line, cur):
@@ -223,7 +223,7 @@ def key_cc(buf, input_line, cur, repeat):
 
 def key_yy(buf, input_line, cur, repeat):
     """Simulate vi's behavior for yy."""
-    p = Popen(['xsel', '-pi'], stdin=PIPE)
+    p = Popen(['xsel', '-bi'], stdin=PIPE)
     p.communicate(input=input_line)
 
 def key_I(buf, input_line, cur, repeat):
