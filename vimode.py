@@ -14,7 +14,6 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
 
 import weechat
 import re
@@ -243,8 +242,11 @@ def key_G(buf, input_line, cur, repeat):
 
 # Common vi key bindings. If the value is a string, it's assumed it's a WeeChat
 # command, and a function otherwise.
-vi_keys = {'j': "/window scroll_down",
-           'k': "/window scroll_up",
+# *adjusted to colemak
+# *added f for link hinting in termite with shell.py
+vi_keys = {'n': "/window scroll_down",
+           'e': "/window scroll_up",
+           'f': "/shell sleep 0.2 && xdotool key control+shift+x"
            'G': key_G,
            'gg': "/window scroll_top",
            'x': "/input delete_next_char",
