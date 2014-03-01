@@ -242,13 +242,39 @@ def key_G(buf, input_line, cur, repeat):
 
 # Common vi key bindings. If the value is a string, it's assumed it's a WeeChat
 # command, and a function otherwise.
-# *adjusted to colemak
-# *added f for link hinting in termite with shell.py
+
+# My adjustments:
+# *changed p to paste from clipboard with modified xclip script
+# *changed yy to yank to clipboard (-b flag)
+# *adjusted to colemak (n and e for up and down)
+# *added f to fake input to activate termite link hinting with shell.py
+# *added binding to simulate gt behaviour
+# *close buffer with leader d
+# *added undo redo
+# *aspell toggle
+# *binding for go.py
+# *added l and L to switch to last and next buffer
+# *bindings to scroll nicklist
+# *k to stop search
 vi_keys = {'n': "/window scroll_down",
            'e': "/window scroll_up",
            'f': "/shell sleep 0.2 && xdotool key control+shift+x",
            'G': key_G,
            'gg': "/window scroll_top",
+           'gt': "/buffer +1",
+           'E': "/buffer +1",
+           'gT': "/buffer -1",
+           'E': "/buffer -1",
+           '\d': "/buffer close",
+           'u': "/input undo",
+           'U': "/input redo",
+           '\s': "/mute aspell toggle",
+           'l': "/input jump_last_buffer_displayed",
+           'L': "/input jump_next_visited_buffer",
+           's': "/go",
+           '<': "/bar scroll nicklist * -100%",
+           '>': "/bar scroll nicklist * +100%",
+           'k': "/input search_stop",
            'x': "/input delete_next_char",
            'dd': "/input delete_line",
            'cc': key_cc,
