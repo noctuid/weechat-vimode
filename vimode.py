@@ -572,7 +572,7 @@ def cb_key_alt_j():
 # *k to stop search
 # *space buffer switch mappings
 # *added experimental tmux bindings
-vi_keys = {'n': "/window scroll_down",
+VI_KEYS = {'n': "/window scroll_down",
            'e': "/window scroll_up",
            'f': "/shell sleep 0.2 && xdotool key control+shift+x",
            'G': key_G,
