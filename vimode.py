@@ -574,6 +574,9 @@ def cb_key_alt_j():
 # *added experimental tmux bindings
 VI_KEYS = {'n': "/window scroll_down",
            'e': "/window scroll_up",
+           # remember that we can give these a count
+           'tn':"/bar scroll nicklist * +100%",
+           'te':"/bar scroll nicklist * -100%",
            'f': "/shell sleep 0.2 && xdotool key control+shift+x",
            'G': key_G,
            'gg': "/window scroll_top",
@@ -814,7 +817,7 @@ VI_OPERATORS = ['c', 'd', 'y']
 # Vi motions. Each motion must have a corresponding function, called "motion_X"
 # where X is the motion.
 VI_MOTIONS = ['w', 'e', 'b', '^', '$', 'h', 'l', '0', 'W', 'E', 'B', 'f', 'F',
-              't', 'T', 'ge', 'gE']
+              'T', 'ge', 'gE']
 # Special characters for motions. The corresponding function's name is
 # converted before calling. For example, '^' will call 'motion_carret' instead
 # of 'motion_^' (which isn't allowed because of illegal characters.)
