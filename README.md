@@ -10,9 +10,9 @@ Great idea and script.
 - Set f to do link hinting with termite using shell.py to send link hint key combo (vimode now has ! for shell commands though)
 - Added some other custom bindings (i.e. for buffer switching with space prefix bindings)
 - Added tmux bindings
--
--
-Rest of Default Readme:
+
+## Rest of Default Readme:
+
 You can view this help text inside WeeChat by typing `/vimode`
 
 # Description:

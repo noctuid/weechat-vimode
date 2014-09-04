@@ -485,7 +485,6 @@ def key_A(buf, input_line, cur, repeat):
     """Simulate vi's behavior for a."""
     set_cur(buf, input_line, len(input_line), False)
     set_mode("INSERT")
->>>>>>> upstream/master
 
 def key_I(buf, input_line, cur, repeat):
     """Simulate vi's behavior for I."""
