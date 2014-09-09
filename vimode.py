@@ -380,10 +380,10 @@ def motion_h(input_line, cur, count):
     count = max(1, count)
     return max(0, cur-count), False
 
-def motion_l(input_line, cur, count):
-    """Return the new position of the cursor after the 'l' motion."""
-    count = max(1, count)
-    return cur+count, False
+# def motion_l(input_line, cur, count):
+#     """Return the new position of the cursor after the 'l' motion."""
+#     count = max(1, count)
+#     return cur+count, False
 
 def motion_carret(input_line, cur, count):
     """Return the new position of the cursor after the '^' motion."""
@@ -584,22 +584,32 @@ VI_KEYS = {'n': "/window scroll_down",
            'E': "/buffer +1",
            'gT': "/buffer -1",
            'N': "/buffer -1",
-           # space buffer switch bindings
-           ' a': "/buffer 1",
-           ' r': "/buffer 2",
-           ' s': "/buffer 3",
-           ' t': "/buffer 4",
-           ' d': "/buffer 5",
-           ' h': "/buffer 6",
-           ' n': "/buffer 7",
-           ' e': "/buffer 8",
-           ' i': "/buffer 9",
-           ' o': "/buffer 10",
-           '\d': "/buffer close",
+           # space buffer switch bindings; and delete line for hook (see .weechatrc in dotfiles)
+           # these are aliases
+           ' a': "/spa",
+           ' r': "/spr",
+           ' s': "/sps",
+           ' t': "/spt",
+           ' d': "/spd",
+           ' h': "/sph",
+           ' n': "/spn",
+           ' e': "/spe",
+           ' i': "/spi",
+           ' o': "/spo",
+           'td': "/buffer close",
+           # split/window management
+           't\'': "/window splitv",
+           't-': "/window splith",
+           'ti': "/window right",
+           'th': "/window left",
+           # 'monocle' toggle
+           'tm': "/window zoom",
+           # close window
+           'tq': "/window merge",
            'u': "/input undo",
            'U': "/input redo",
-           '\s': "/mute aspell toggle",
-           'l': "/input jump_last_buffer_displayed",
+           'ts': "/mute aspell toggle",
+           'l': "/input jump_previously_visited_buffer",
            'L': "/input jump_next_visited_buffer",
            # "window management" from within weechat
            # tmux experimentation"{{{
@@ -662,10 +672,8 @@ VI_KEYS = {'n': "/window scroll_down",
            #}}}
 
            'ra': "/shell tmux select-window -t 1",
-           # 's': "/go",
-           '<': "/bar scroll nicklist * -100%",
-           '>': "/bar scroll nicklist * +100%",
-           'k': "/input search_stop",
+           '  ': "/input switch_active_buffer",
+           'k': "/input jump_smart",
            'x': "/input delete_next_char",
            'X': "/input delete_previous_char",
            'dd': "/input delete_line",
@@ -816,7 +824,7 @@ VI_KEYS = {'n': "/window scroll_down",
 VI_OPERATORS = ['c', 'd', 'y']
 # Vi motions. Each motion must have a corresponding function, called "motion_X"
 # where X is the motion.
-VI_MOTIONS = ['w', 'e', 'b', '^', '$', 'h', 'l', '0', 'W', 'E', 'B', 'f', 'F',
+VI_MOTIONS = ['w', 'e', 'b', '^', '$', 'h', '0', 'W', 'E', 'B', 'f', 'F',
               'T', 'ge', 'gE']
 # Special characters for motions. The corresponding function's name is
 # converted before calling. For example, '^' will call 'motion_carret' instead
