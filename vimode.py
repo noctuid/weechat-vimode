@@ -889,7 +889,7 @@ VI_KEYS = {'n': "/window scroll_down",
            '\x01Ws': "/window splith",
            '\x01Wv': "/window splitv",
            '\x01Wq': "/window merge",
-           ';': key_semicolon,
+           ':': key_semicolon,
            ',': key_comma}
 
 # Vi operators. Each operator must have a corresponding function,
