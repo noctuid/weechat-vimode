@@ -631,7 +631,7 @@ def key_comma(buf, input_line, cur, repeat):
 # *changed p to paste from clipboard with modified xclip script
 # *changed yy to yank to clipboard (-b flag)
 # *adjusted to colemak (n and e for up and down)
-# *added f to fake input to activate termite link hinting with shell.py
+# *added f to fake input to activate termite link hinting now with weechat's builtin exec
 # *added binding to simulate gt behaviour
 # *close buffer with leader d
 # *added undo redo
@@ -685,63 +685,62 @@ VI_KEYS = {'n': "/window scroll_down",
            # tmux experimentation"{{{
 	   # "r" is redraw"{{{
 	   # window switching"{{{
-           'ra': "/shell tmux select-window -t 1",
-           'rr': "/shell tmux select-window -t 2",
-           'rs': "/shell tmux select-window -t 3",
-           'rt': "/shell tmux select-window -t 4",
-           'rd': "/shell tmux select-window -t 5",
-           'rh': "/shell tmux select-window -t 6",
-           'rn': "/shell tmux select-window -t 7",
-           're': "/shell tmux select-window -t 8",
-           'ri': "/shell tmux select-window -t 9",
-           'ro': "/shell tmux select-window -t 10",
+           'ra': "/exec -bg tmux select-window -t 1",
+           'rr': "/exec -bg tmux select-window -t 2",
+           'rs': "/exec -bg tmux select-window -t 3",
+           'rt': "/exec -bg tmux select-window -t 4",
+           'rd': "/exec -bg tmux select-window -t 5",
+           'rh': "/exec -bg tmux select-window -t 6",
+           'rn': "/exec -bg tmux select-window -t 7",
+           're': "/exec -bg tmux select-window -t 8",
+           'ri': "/exec -bg tmux select-window -t 9",
+           'ro': "/exec -bg tmux select-window -t 10",
 	   #}}}
 	   # resize panes"{{{
-           'rml': "/shell tmux resize-pane -L",
-           'rmn': "/shell tmux resize-pane -D",
-           'rme': "/shell tmux resize-pane -U",
-           'rmi': "/shell tmux resize-pane -R",
+           'rml': "/exec -bg tmux resize-pane -L",
+           'rmn': "/exec -bg tmux resize-pane -D",
+           'rme': "/exec -bg tmux resize-pane -U",
+           'rmi': "/exec -bg tmux resize-pane -R",
 	   #}}}
 	   # circulate
 	   # previous
-           'r,': "/shell tmux swap-pane -U",
-           'r.': "/shell tmux swap-pane -D",
+           'r,': "/exec -bg tmux swap-pane -U",
+           'r.': "/exec -bg tmux swap-pane -D",
 	   # new session
-           'r_': "/shell tmux new-session",
+           'r_': "/exec -bg tmux new-session",
 	   # new window 
-           'rc': "/shell tmux new-window",
+           'rc': "/exec -bg tmux new-window",
 	   # kill pane
-           'rx': "/shell tmux kill-pane",
+           'rx': "/exec -bg tmux kill-pane",
 	   # last window 
-           'rl': "/shell tmux last-window",
+           'rl': "/exec -bg tmux last-window",
 	   # split windows
-           'r/': "/shell tmux split-window -h",
-           'r-': "/shell tmux split-window",
+           'r/': "/exec -bg tmux split-window -h",
+           'r-': "/exec -bg tmux split-window",
 	   # break pane
-           'r!': "/shell tmux break-pane",
+           'r!': "/exec -bg tmux break-pane",
 	   #}}}
 
 	   # "s" is select"{{{
 	   # panes"{{{
 	   # directions
-           'sh': "/shell tmux select-pane -L",
-           'sn': "/shell tmux select-pane -D",
-           'se': "/shell tmux select-pane -U",
-           'si': "/shell tmux select-pane -R",
+           'sh': "/exec -bg tmux select-pane -L",
+           'sn': "/exec -bg tmux select-pane -D",
+           'se': "/exec -bg tmux select-pane -U",
+           'si': "/exec -bg tmux select-pane -R",
 	   # last
-           'sl': "/shell tmux select-pane -l",
+           'sl': "/exec -bg tmux select-pane -l",
 	   # select layout
-           'sv': "/shell tmux select-layout main-vertical",
+           'sv': "/exec -bg tmux select-layout main-vertical",
 	   # toggle "monocle" (zoom)
-           'st': "/shell tmux resize-pane -Z",
+           'st': "/exec -bg tmux resize-pane -Z",
 	   #}}}
 
 	   # select session
-           'ss': "/shell tmux choose-client",
+           'ss': "/exec -bg tmux choose-client",
 	   #}}}
            #}}}
 
-           'ra': "/shell tmux select-window -t 1",
            '  ': "/input switch_active_buffer",
            'k': "/input jump_smart",
            'x': "/input delete_next_char",
